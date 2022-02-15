@@ -1,0 +1,57 @@
+---
+title: "NBA Win/Loss Record Explorer"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Win Loss Explorer
+
+
+### Description
+
+A simple application to let users explore likely outcomes of the current NBA season using data from of all historical NBA seasons going back to 1950. 
+
+Users can select the number ofwins and losses a current team has, as well as the point differential (the total points they have scored - the total points their opponents have scored) and a tolerance value for matching. 
+
+The app will then display the results of all teams that have had that record (wins and losses) along with the point differential plus/minus the tolerance. 
+
+For example: Inputs: Wins = 5, Losses = 4, differential = 5, tolerance = 5
+
+The app will extract all NBA teams that started their season with 5 wins and 4 losses
+with a point differential of 0 to 10 (5 - 5, to 5 + 5).
+
+The app should display how many teams in NBA history meet that criteria. The app should also display a chart showing the season outcomes for each team that matches the inputs (how many wins did they end up with. How many teams made the playoffs)
+
+
+### Requirements
+
+1. The app should display the current standings of the NBA in 2 tables
+  - One table for the Eastern Conference
+  - One table for the Western conference
+
+2. The app should provide a place for user inputs:
+  - number of wins
+  - number of losses
+  - point differential
+  - differential tolerance
+  
+3. The app should display all historical teams that match the inputs
+
+
+### Design
+
+We will design the application as a 2 page display:
+
+1. The first page will display the current standings of the NBA
+2. The second page will be divided into two columns
+  - The column on the left will provide a space for user inputs
+  - The column on the right will be a tabbed panel with:
+    - a table of all teams matching the inputs
+    - a textual summary of the results (Median number of wins with Interquartile Range)
+    - a Plot with number of games on the X axis, number of wins on the Y axis and a line
+      for each historical team that matches the inputs
+      
+      
